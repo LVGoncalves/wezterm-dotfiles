@@ -1,16 +1,16 @@
 # WezTerm dotfiles
 
-A small, practical WezTerm setup with PowerShell on Windows, sensible font fallbacks elsewhere, Catppuccin Mocha, panes, tabs, workspaces, search, and quick-select. No plugins or extra runtime dependencies.
+A small, practical WezTerm setup with Windows PowerShell, sensible font fallbacks, Catppuccin Mocha, panes, tabs, workspaces, search, and quick-select. No plugins or extra runtime dependencies.
 
 ## Install
 
-Install [WezTerm](https://wezterm.org/install/index.html), clone this repository, then run:
+Clone this repository, open PowerShell in it, and run one command:
 
 ```powershell
-pwsh -File ./install.ps1
+powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-The installer copies `wezterm.lua` to `~/.config/wezterm/wezterm.lua`. If a config already exists, it is preserved beside it as a timestamped backup. WezTerm reloads config changes automatically; `Ctrl+Shift+R` forces a reload.
+The script installs WezTerm with `winget` when available, otherwise with the current official Windows installer, then copies `wezterm.lua` to `~/.config/wezterm/wezterm.lua`. If a config already exists, it is preserved beside it as a timestamped backup. WezTerm reloads config changes automatically; `Ctrl+Shift+R` forces a reload.
 
 To try the config without installing it:
 

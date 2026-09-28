@@ -6,7 +6,7 @@ config:set_strict_mode(true)
 
 -- Shell
 if wezterm.target_triple:find 'windows' then
-  config.default_prog = { 'pwsh.exe', '-NoLogo' }
+  config.default_prog = { 'powershell.exe', '-NoLogo' }
 end
 
 -- Type
