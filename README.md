@@ -32,7 +32,7 @@ wezterm --config-file ./wezterm.lua start
 | `Leader z` | Zoom / restore pane |
 | `Leader p` | Select a pane by label |
 | `Alt+Arrow` | Focus pane in that direction |
-| `Leader Arrow` | Resize pane in that direction |
+| `Alt+Shift+Arrow` | Resize pane in that direction |
 | `Leader w` | Workspace picker |
 | `Ctrl+Shift+P` | Command palette |
 | `Ctrl+Shift+F` | Search scrollback |
