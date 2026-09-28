@@ -4,24 +4,13 @@ A dependency-free WezTerm setup for Ubuntu with the current login shell, Linux f
 
 ## Install
 
-Install WezTerm from its official APT repository:
+Clone this repository, open a terminal in it, and run one command:
 
 ```sh
-curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
-echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
-sudo chmod 644 /usr/share/keyrings/wezterm-fury.gpg
-sudo apt update
-sudo apt install wezterm
+sh ./install.sh
 ```
 
-Then clone this folder and install the config:
-
-```sh
-chmod +x install.sh
-./install.sh
-```
-
-The installer copies `wezterm.lua` to `${XDG_CONFIG_HOME:-~/.config}/wezterm/wezterm.lua`. An existing config is preserved beside it as a timestamped backup.
+The script installs WezTerm from its official APT repository when needed, then copies `wezterm.lua` to `${XDG_CONFIG_HOME:-~/.config}/wezterm/wezterm.lua`. An existing config is preserved beside it as a timestamped backup. It supports Ubuntu and Debian.
 
 Try it without installing:
 
