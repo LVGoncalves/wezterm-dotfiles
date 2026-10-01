@@ -1,4 +1,4 @@
--- ~/.wezterm.lua  (Windows: %USERPROFILE%\.wezterm.lua)
+-- ~/.config/wezterm/wezterm.lua  (Windows: %USERPROFILE%\.config\wezterm\wezterm.lua)
 -- Catppuccin Mocha + transparency/blur, tmux-style leader keys, status bar.
 
 local wezterm = require('wezterm')
@@ -73,7 +73,11 @@ config.adjust_window_size_when_changing_font_size = false
 -- Default shell: PowerShell 7 on Windows. LEADER + Space opens a menu
 -- with the other shells.
 if is_windows then
-  config.default_prog = { 'pwsh.exe', '-NoLogo' }
+  -- Fall back to Windows PowerShell 5 on machines without PowerShell 7.
+  -- glob, not io.open: the Microsoft Store's pwsh.exe alias can't be opened.
+  local has_pwsh = #wezterm.glob('C:/Program Files/PowerShell/7/pwsh.exe') > 0
+    or #wezterm.glob((os.getenv('LOCALAPPDATA') or '') .. '/Microsoft/WindowsApps/pwsh.exe') > 0
+  config.default_prog = { has_pwsh and 'pwsh.exe' or 'powershell.exe', '-NoLogo' }
   config.launch_menu = {
     { label = 'PowerShell 7', args = { 'pwsh.exe', '-NoLogo' } },
     { label = 'Windows PowerShell 5', args = { 'powershell.exe', '-NoLogo' } },
