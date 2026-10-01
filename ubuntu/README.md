@@ -4,7 +4,7 @@ A dependency-free WezTerm setup for Ubuntu with the current login shell, Linux f
 
 ## Install
 
-Clone this repository, open a terminal in it, and run one command:
+Clone this repository, open a terminal in its `ubuntu` folder, and run one command:
 
 ```sh
 sh ./install.sh

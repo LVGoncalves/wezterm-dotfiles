@@ -4,7 +4,7 @@ A small, practical WezTerm setup with Windows PowerShell, sensible font fallback
 
 ## Install
 
-Clone this repository, open PowerShell in it, and run one command:
+Clone this repository, open PowerShell in its `windows` folder, and run one command:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\install.ps1
@@ -24,23 +24,26 @@ wezterm --config-file ./wezterm.lua start
 
 | Keys | Action |
 |---|---|
-| `Leader t` | New tab |
-| `Leader n` / `Leader b` | Next / previous tab |
-| `Leader v` | Split pane right |
-| `Leader s` | Split pane down |
-| `Leader x` | Close pane with confirmation |
+| `Leader c` | New tab |
+| `Leader n` / `Leader p` | Next / previous tab |
+| `Leader 1`–`9` | Jump to tab |
+| `Leader t` | Rename tab |
+| `Leader v` / `Alt+e` | Split pane right |
+| `Leader s` / `Alt+o` | Split pane down |
+| `Leader x` / `Ctrl+Shift+W` | Close pane with confirmation |
 | `Leader z` | Zoom / restore pane |
-| `Leader p` | Select a pane by label |
-| `Alt+Arrow` | Focus pane in that direction |
+| `Leader h/j/k/l` / `Alt+Arrow` | Focus pane in that direction |
+| `Leader r`, then `h/j/k/l` | Resize mode (`Esc` / `Enter` to exit) |
 | `Alt+Shift+Arrow` | Resize pane in that direction |
 | `Leader w` | Workspace picker |
+| `Leader Space` | Launch menu |
+| `Leader y` | Copy mode |
+| `Leader f` | Quick-select URLs, hashes and paths |
+| `Leader o` | Toggle transparency |
+| `Leader Up` / `Leader Down` | More / less opaque |
 | `Ctrl+Shift+P` | Command palette |
-| `Ctrl+Shift+F` | Search scrollback |
-| `Ctrl+Shift+Space` | Quick-select URLs and paths |
-| `Alt+Enter` | Toggle fullscreen |
 | `Ctrl+Shift+C` / `Ctrl+Shift+V` | Copy / paste (WezTerm defaults) |
 | `Ctrl+Shift+R` | Reload configuration (WezTerm default) |
-| `Ctrl+Shift++` / `Ctrl+-` / `Ctrl+0` | Font larger / smaller / reset (WezTerm defaults) |
 | `Leader Ctrl+a` | Send a literal `Ctrl+a` to the shell |
 
 Run `wezterm show-keys` to inspect every active binding, including WezTerm's defaults.
