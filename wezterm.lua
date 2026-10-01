@@ -35,7 +35,8 @@ elseif is_windows then
   config.win32_system_backdrop = 'Disable'
   config.front_end = 'OpenGL'
 else
-  config.kde_window_background_blur = true  -- KDE Plasma only
+  -- KDE Plasma only; pcall because the 20240203 stable release rejects the field.
+  pcall(function() config.kde_window_background_blur = true end)
 end
 
 -- No separate title bar: minimize / maximize / close sit in the tab bar
